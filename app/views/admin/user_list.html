@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <title>Lista de usuários</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p>Lista de usuários</p>
+            <button type="button" class="btn btn-success" onclick="changeModalView('createUserModal')" >Adicionar</button>
+        </div>
+        <div class="content">
+            <table class="table table-dark table-hover table-striped">
+                <thead>
+                    <td>#</td>
+                    <td>Nome</td>
+                    <td>Email</td>
+                    <td>Ações</td>
+                </thead>
+                <tr>
+                    <td>1</td>
+                    <td>Usuário 1</td>
+                    <td>email@user.com</td>
+                    <td>
+                        <button type="button" class="btn btn-light" onclick="changeModalView('readUserModal')">vizualizar</button>
+                        <button type="button" class="btn btn-danger" onclick="changeModalView('updateUserModal')">Editar</button>
+                        <button type="button" class="btn btn-warning" onclick="changeModalView('deleteUserModal')">Excluir</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+<!-- Modal Create User -->
+<div id="createUserModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="changeModalView('createUserModal')">&times;</span>
+      <h2>Create User</h2>
+      <form id="createUserForm">
+        <label for="userName">Name:</label>
+        <input type="text" id="userName" name="userName" required>
+        
+        <label for="userEmail">Email:</label>
+        <input type="email" id="userEmail" name="userEmail" required>
+        
+        <label for="userPassword">Password:</label>
+        <input type="password" id="userPassword" name="userPassword" required>
+        
+        <button type="submit">Create User</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Modal Read User -->
+  <div id="readUserModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="changeModalView('readUserModal')">&times;</span>
+      <h2>User Details</h2>
+      <p><strong>Name:</strong> <span id="displayUserName"></span></p>
+      <p><strong>Email:</strong> <span id="displayUserEmail"></span></p>
+    </div>
+  </div>
+  
+  <!-- Modal Update User -->
+  <div id="updateUserModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="changeModalView('updateUserModal')">&times;</span>
+      <h2>Update User</h2>
+      <form id="updateUserForm">
+        <label for="updateUserName">Name:</label>
+        <input type="text" id="updateUserName" name="updateUserName" required>
+        
+        <label for="updateUserEmail">Email:</label>
+        <input type="email" id="updateUserEmail" name="updateUserEmail" required>
+        
+        <label for="updateUserPassword">Password:</label>
+        <input type="password" id="updateUserPassword" name="updateUserPassword">
+        
+        <button type="submit">Update User</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Modal Delete User -->
+  <div id="deleteUserModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="changeModalView('deleteUserModal')">&times;</span>
+      <h2>Delete User</h2>
+      <p>Are you sure you want to delete this user?</p>
+      <button id="confirmDeleteUser">Yes, Delete</button>
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        function changeModalView (modalId) {
+            var modal = document.getElementById(modalId);
+            modal.classList.toggle('modal-show');
+        }
+    </script>
+</body>
+</html>
