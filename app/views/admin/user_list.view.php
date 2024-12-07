@@ -36,6 +36,11 @@
                 </tr>
                 <?php endforeach; ?>
             </table>
+            <div class="logout-div">
+              <form action="#" method="POST">
+                <button type="submit" class="btn btn-danger">Danger</button>
+              </form>
+            </div>
         </div>
     </div>
 

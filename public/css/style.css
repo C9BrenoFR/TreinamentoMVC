@@ -56,3 +56,8 @@ form{
     display: flex;
     flex-direction: column;
 }
+
+.logout-div{
+    display: flex;
+    justify-content: center;
+}
