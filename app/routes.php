@@ -9,4 +9,8 @@ use App\Core\Router;
     $router->post('users/edit', 'ExampleController@edit');
     $router->post('users/delete', 'ExampleController@delete');
 
+    $router->get('login', 'LoginController@index');
+    
+    $router->get('busca', 'BuscaController@index');
+
 ?>
