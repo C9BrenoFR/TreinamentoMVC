@@ -14,15 +14,60 @@ class QueryBuilder
         $this->pdo = $pdo;
     }
 
-    public function selectAll($table)
+    public function selectAll($table, $take, $skip)
     {
-        $sql = "select * from {$table}";
+        $sql = "SELECT * FROM {$table} LIMIT {$take} OFFSET {$skip}";
 
         try {
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute();
 
             return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function count($table)
+    {
+        $sql = "SELECT COUNT(*) FROM {$table}";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            return intval($stmt->fetch(PDO::FETCH_NUM)[0]);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function selectAllWhithSearch($table, $column, $search, $take, $skip)
+    {
+        $sql = "select * from {$table} WHERE {$column} LIKE '%{$search}%' LIMIT {$take} OFFSET {$skip}";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function countWithSearch($table,$column, $search)
+    {
+        $sql = "SELECT COUNT(*) FROM {$table} WHERE {$column} LIKE '%{$search}%'";
+
+        try {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            return intval($stmt->fetch(PDO::FETCH_NUM)[0]);
 
         } catch (Exception $e) {
             die($e->getMessage());
