@@ -48,18 +48,18 @@
 <div id="createUserModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="changeModalView('createUserModal')">&times;</span>
-      <h2>Create User</h2>
+      <h2>Criar usuário</h2>
       <form id="createUserForm" action="/users/create" method="POST">
-        <label for="userName">Name:</label>
-        <input type="text" id="userName" name="userName" required>
+        <label for="userName">Nome:</label>
+        <input type="text" id="userName" name="userName" required autocomplete="off">
         
-        <label for="userEmail">Email:</label>
-        <input type="email" id="userEmail" name="userEmail" required>
+        <label for="userEmail">E-mail:</label>
+        <input type="email" id="userEmail" name="userEmail" required autocomplete="off">
         
-        <label for="userPassword">Password:</label>
-        <input type="password" id="userPassword" name="userPassword" required>
+        <label for="userPassword">Senha:</label>
+        <input type="password" id="userPassword" name="userPassword" required autocomplete="off">
         
-        <button type="submit">Create User</button>
+        <button type="submit">Criar usuário</button>
       </form>
     </div>
   </div>
@@ -79,19 +79,19 @@
   <div id="updateUserModal<?= $user->id?>" class="modal">
     <div class="modal-content">
       <span class="close" onclick="changeModalView('updateUserModal<?= $user->id?>')">&times;</span>
-      <h2>Update User</h2>
+      <h2>Atualizar usuário</h2>
       <form id="updateUserForm" action="/users/edit" method="POST">
         <input type="hidden" value="<?= $user->id?>" name="id">
-        <label for="updateUserName">Name:</label>
-        <input type="text" id="updateUserName" value="<?= $user->nome?>" name="updateUserName" required>
+        <label for="updateUserName">Nome:</label>
+        <input type="text" id="updateUserName" value="<?= $user->nome?>" name="updateUserName" autocomplete="off" required>
         
-        <label for="updateUserEmail">Email:</label>
-        <input type="email" id="updateUserEmail" value="<?= $user->email ?>"name="updateUserEmail" required>
+        <label for="updateUserEmail">E-mail:</label>
+        <input type="email" id="updateUserEmail" value="<?= $user->email ?>"name="updateUserEmail" autocomplete="off" required >
         
-        <label for="updateUserPassword">Password:</label>
-        <input type="password" id="updateUserPassword" name="updateUserPassword">
+        <label for="updateUserPassword">Senha:</label>
+        <input type="password" id="updateUserPassword" name="updateUserPassword" autocomplete="off">
         
-        <button type="submit">Update User</button>
+        <button type="submit">Atualizar usuário</button>
       </form>
     </div>
   </div>
@@ -102,9 +102,9 @@
     <div class="modal-content">
       <input type="hidden" value="<?= $user->id?>" name="iddelete">
       <span class="close" onclick="changeModalView('deleteUserModal<?= $user->id?>')">&times;</span>
-      <h2>Delete User</h2>
-      <p>Are you sure you want to delete this user?</p>
-      <button type="submit" id="confirmDeleteUser">Yes, Delete</button>
+      <h2>Deletar usuário</h2>
+      <p>Tem certeza que deseja deletar esse usuário?</p>
+      <button type="submit" id="confirmDeleteUser">Sim, deletar</button>
     </div>
     </form>
   </div>

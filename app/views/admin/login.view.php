@@ -17,11 +17,11 @@
                 <form action="#" method="POST">
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                        <input type="email" class="form-control" id="email" name="email" required autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label for="password">Senha</label>
-                        <input type="password" class="form-control" id="password" name="senha" required>
+                        <input type="password" class="form-control" id="password" name="senha" required autocomplete="off">
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Login</button>
                 </form>
