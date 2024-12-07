@@ -23,3 +23,14 @@ body {
     background-color: #343a40;
     color: white;
 }
+
+.card-body{
+    padding-top: 0 !important;
+}
+
+.mensagem-erro{
+    display: flex;
+    justify-content: center;
+    padding: 3px 0px;
+    color: red
+}
