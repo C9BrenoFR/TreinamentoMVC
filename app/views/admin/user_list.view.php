@@ -30,8 +30,8 @@
                     <td>
                       
                         <button type="button" class="btn btn-light" onclick="changeModalView('readUserModal<?= $user->id?>')">visualizar</button>
-                        <button type="button" class="btn btn-danger" onclick="changeModalView('updateUserModal<?= $user->id?>')">Editar</button>
-                        <button type="button" class="btn btn-warning" onclick="changeModalView('deleteUserModal<?= $user->id ?>')">Excluir</button>
+                        <button type="button" class="btn btn-warning" onclick="changeModalView('updateUserModal<?= $user->id?>')">Editar</button>
+                        <button type="button" class="btn btn-danger" onclick="changeModalView('deleteUserModal<?= $user->id ?>')">Excluir</button>
                     </td>
                 </tr>
                 <?php endforeach; ?>
