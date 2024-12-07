@@ -72,8 +72,7 @@ class QueryBuilder
     public function delete($table, $id){
         $sql = sprintf ('DELETE FROM %s WHERE %s',
         $table,
-        $id
-    );
+        "id = " . $id);
 
     try {
         $stmt = $this->pdo->prepare($sql);
