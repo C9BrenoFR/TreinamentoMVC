@@ -38,7 +38,7 @@
             </table>
             <div class="logout-div">
               <form action="#" method="POST">
-                <button type="submit" class="btn btn-danger">Danger</button>
+                <button type="submit" class="btn btn-danger">Logout</button>
               </form>
             </div>
         </div>

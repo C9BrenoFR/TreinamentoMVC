@@ -13,6 +13,11 @@ class ExampleController
         $users = App::get('database')->selectAll("users");
         return view('admin/user_list', compact('users'));
     }
+
+    public function login()
+    {
+        return view('admin/login');
+    }
     public function create(){
         $parameters = [
             'nome' => $_POST['userName'],
